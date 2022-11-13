@@ -11,38 +11,23 @@
    192.168.2.2
   
     
-
-Switch#config terminal
 Switch(config)#vlan 10
-Switch(config-vlan)#name SALES
+Switch(config-vlan)#name HR
 Switch(config-vlan)#vlan 20
 Switch(config-vlan)#name IT
-
-Switch>enable
-Switch#config terminal
-
-Switch(config)#int fa0/1
-
+Switch(config-vlan)#int fa0/1
 Switch(config-if)#switchport mode access
 Switch(config-if)#switchport access vlan 10
-
 Switch(config-if)#int fa0/2
-
 Switch(config-if)#switchport mode access
 Switch(config-if)#switchport access vlan 10
-
 Switch(config-if)#int fa0/3
-
 Switch(config-if)#switchport mode access
 Switch(config-if)#switchport access vlan 20
-
+Switch(config-if)#int fa0/4
+Switch(config-if)#switchport mode access
 Switch(config-if)#switchport access vlan 20
-
-Switch(config-if)#int range fa0/1-4
-Switch(config-if-range)#switchport mode access
-
-Switch(config)#int fa 0/5
-
+Switch(config-if)#int fa0/5
 Switch(config-if)#switchport mode trunk
 
 Router(config-if)#int fa0/0.10
