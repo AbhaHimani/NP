@@ -1,0 +1,49 @@
+Switch>en
+Switch#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 10
+Switch(config-vlan)#name LAN10
+Switch(config-vlan)#exit
+Switch(config)#vlan 20
+Switch(config-vlan)#name LAN20
+Switch(config-vlan)#exit
+Switch(config)#int fas0/1
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 10
+Switch(config-if)#exit
+Switch(config)#int fas0/2
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 20
+Switch(config-if)#exit
+	
+Switch(config)#exit
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch#sh vlan
+	
+Switch#conf
+Configuring from terminal, memory, or network [terminal]? 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#int vlan 10
+Switch(config-if)#
+
+Switch(config-if)#ip address 192.168.1.10 255.255.255.0
+Switch(config-if)#exit
+Switch(config)#int vlan 20
+Switch(config-if)#
+
+Switch(config-if)#ip address 
+Switch(config-if)#ip address 192.168.2.10 255.255.255.0
+Switch(config-if)#exit
+Switch(config)#exit
+
+
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#ip routing
+
+
+<------------------------------------------------on Command prompt--------------------------------->
+ping 192.168.2.1
+
