@@ -9,6 +9,9 @@
     
  4-192.168.2.20
    192.168.2.2
+   
+ Switch>en
+Switch#config t
   
     
 Switch(config)#vlan 10
